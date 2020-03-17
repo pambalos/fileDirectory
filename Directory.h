@@ -1,9 +1,23 @@
 //
 // Created by Justice, Bradley on 3/17/20.
 //
+/*
+ Good clean structure
+
+ What is file type?  is it a list of values or an arbitrary string?  Is it part of the file name or separate?
+
+ Does this represent all you meta data?
+
+ Do we want to enable clusters? - Think about waste, large files enable clustering, but lost of small files cluster is bad
+
+ Waste = size_block/2 (larger blocks = more waste)
+*/
+
 
 #ifndef FILEDIRECTORY_DIRECTORY_H
 #define FILEDIRECTORY_DIRECTORY_H
+
+
 
 typedef struct Dir_Entry {
     char name[30];
@@ -16,6 +30,7 @@ typedef struct Dir_Entry {
 };
 
 typedef struct File_System_Info {
+    struct Dir_Entry *root;
 
 };
 
