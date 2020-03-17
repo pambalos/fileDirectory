@@ -22,7 +22,7 @@ enum FileType {
 };
 
 
-typedef struct Dir_Entry { //This is our logical block
+typedef struct Dir_Entry {
     char name[30];
     enum FileType file_type;
     unsigned char permissions;
