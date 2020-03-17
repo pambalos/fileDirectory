@@ -5,7 +5,7 @@
 #ifndef FILEDIRECTORY_DIRECTORY_H
 #define FILEDIRECTORY_DIRECTORY_H
 
-Typedef struct Dir_Entry {
+typedef struct Dir_Entry {
     char name[30];
     char file_type[10];
     unsigned char permissions;
@@ -13,7 +13,10 @@ Typedef struct Dir_Entry {
     unsigned long int date_modified;
     unsigned long long size;
     unsigned long long location;
-}
+};
 
+typedef struct File_System_Info {
+
+};
 
 #endif //FILEDIRECTORY_DIRECTORY_H
