@@ -17,21 +17,30 @@
 #ifndef FILEDIRECTORY_DIRECTORY_H
 #define FILEDIRECTORY_DIRECTORY_H
 
+enum FileType {
+    txt, zip, sh, exe, pdf, bat
+};
 
 
-typedef struct Dir_Entry {
+typedef struct Dir_Entry { //This is our logical block
     char name[30];
-    char file_type[10];
+    enum FileType file_type;
     unsigned char permissions;
     unsigned long int date_created;
     unsigned long int date_modified;
     unsigned long long size;
-    unsigned long long location;
+
 };
 
 typedef struct File_System_Info {
     struct Dir_Entry *root;
-
+    struct Dir_Entry **LBA; //LBA points to our
+    struct Dir_Entry **Free_Blocks;
+    struct Dir_Entry **Free_Blocks2;
+    unsigned long int volume_size;
+    char volume_name[30];
+    unsigned int volume_id;
+    unsigned short int lba_size;
 };
 
 #endif //FILEDIRECTORY_DIRECTORY_H
